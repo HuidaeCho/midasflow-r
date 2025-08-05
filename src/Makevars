@@ -1,0 +1,2 @@
+PKG_CFLAGS=-I$(HOME)/usr/local/include
+PKG_LIBS=-L$(HOME)/usr/local/lib -lmidas

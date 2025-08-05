@@ -1,0 +1,14 @@
+Package: midasflow
+Title: R Interface to the Memory-Efficient I/O-Improved Drainage Analysis System (MIDAS)
+Version: 0.1.0
+Authors@R: person("Huidae", "Cho", 
+  email = "grass4u@gmail.com", 
+  role = c("aut", "cre"))
+Maintainer: Huidae Cho <grass4u@gmail.com>
+Description: Provides memory-efficient and OpenMP-parallelized algorithms 
+  for computing hydrologic parameters, designed for large-scale drainage 
+  analysis workflows.
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2

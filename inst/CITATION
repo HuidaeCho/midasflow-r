@@ -1,0 +1,52 @@
+citHeader("To cite specific MIDAS functions in publications, please use:")
+
+bibentry(
+  bibtype = "Article",
+  title = "Memory-Efficient Flow Accumulation Using a Look-Around Approach and Its OpenMP Parallelization",
+  author = person(
+    "Huidae",
+    "Cho",
+    email = "grass4u@gmail.com",
+    role = c("aut", "cre")
+  ),
+  journal = "Environmental Modelling & Software",
+  year = 2023,
+  volume = 167,
+  pages = "105771",
+  doi = "10.1016/j.envsoft.2023.105771",
+  note = "Reference for the MEFA function"
+)
+
+bibentry(
+  bibtype = "Article",
+  title = "Avoid Backtracking and Burn Your Inputs: CONUS-Scale Watershed Delineation Using OpenMP",
+  author = person(
+    "Huidae",
+    "Cho",
+    email = "grass4u@gmail.com",
+    role = c("aut", "cre")
+  ),
+  journal = "Environmental Modelling & Software",
+  year = 2025,
+  volume = 183,
+  pages = "106244",
+  doi = "10.1016/j.envsoft.2024.106244",
+  note = "Reference for the MESHED function"
+)
+
+bibentry(
+  bibtype = "Article",
+  title = "Loop Then Task: Hybridizing OpenMP Parallelism to Improve Load Balancing and Memory Efficiency in Continental-Scale Longest Flow Path Computation",
+  author = person(
+    "Huidae",
+    "Cho",
+    email = "grass4u@gmail.com",
+    role = c("aut", "cre")
+  ),
+  journal = "Environmental Modelling & Software",
+  year = 2025,
+  volume = 193,
+  pages = "106630",
+  doi = "10.1016/j.envsoft.2025.106630",
+  note = "Reference for the MELFP function"
+)
