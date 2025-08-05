@@ -4,9 +4,16 @@
 
 ## Related projects
 
-* [MIDAS](https://github.com/HuidaeCho/midas)
-* [MIDASFlow](https://github.com/HuidaeCho/midasflow): Python interface to [MIDAS](https://github.com/HuidaeCho/midas)
-* [MIDAS QGIS plugin](https://github.com/HuidaeCho/midas-qgis)
+* [MIDAS](https://github.com/HuidaeCho/midas): Core C library and excutables (required for all Python, R, and QGIS interfaces)
+* [MIDASFlow](https://github.com/HuidaeCho/midasflow): Python package
+* [MIDAS-QGIS](https://github.com/HuidaeCho/midas-qgis): QGIS plugin
+
+## Installation
+
+```R
+remotes::install_github("HuidaeCho/midasflow-r")
+library(midasflow)
+```
 
 ## References
 
