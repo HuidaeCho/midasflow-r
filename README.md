@@ -18,7 +18,7 @@ library(midasflow)
 ## Watershed delineation example
 
 ```R  
-meshed("fdr.tif", "outlets515152.shp", "cat", "wsheds.tif")
+meshed("fdr.tif", "outlets.shp", "cat", "wsheds.tif")
 ```
 
 ## References
