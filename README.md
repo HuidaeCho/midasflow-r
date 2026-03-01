@@ -14,6 +14,7 @@
 ## Installation
 
 ```R
+install.packages("remotes")
 remotes::install_git("git@github.com:HuidaeCho/midasflow-r.git")
 library(midasflow)
 ```
