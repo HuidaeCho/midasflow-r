@@ -50,3 +50,20 @@ bibentry(
   doi = "10.1016/j.envsoft.2025.106630",
   note = "Reference for the MELFP function"
 )
+
+bibentry(
+  bibtype = "Article",
+  title = "Flow in Float: Memory-Efficient Upstream Flow Length Parallel Computation Using an IEEE-754-Based Union Encoding",
+  author = person(
+    "Huidae",
+    "Cho",
+    email = "grass4u@gmail.com",
+    role = c("aut", "cre")
+  ),
+  journal = "Environmental Modelling & Software",
+  year = 2026,
+  volume = 204,
+  pages = "107045",
+  doi = "10.1016/j.envsoft.2026.107045",
+  note = "Reference for the MEUFL function"
+)

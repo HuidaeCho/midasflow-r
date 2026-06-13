@@ -9,7 +9,7 @@ mefa(
   accum_path,
   dir_opts = NULL,
   encoding = NULL,
-  use_lessmem = FALSE,
+  use_lessmem = TRUE,
   compress_output = FALSE,
   num_threads = 0
 )

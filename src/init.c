@@ -7,11 +7,13 @@ extern SEXP call_meshed(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP,
                         SEXP, SEXP, SEXP, SEXP, SEXP);
 extern SEXP call_melfp(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP,
                        SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
+extern SEXP call_meufl(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 
 static const R_CallMethodDef CallEntries[] = {
     {"call_mefa", (DL_FUNC) & call_mefa, 7},
     {"call_meshed", (DL_FUNC) & call_meshed, 14},
     {"call_melfp", (DL_FUNC) & call_meshed, 17},
+    {"call_meufl", (DL_FUNC) & call_meufl, 8},
     {NULL, NULL, 0}
 };
 

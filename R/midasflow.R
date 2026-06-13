@@ -93,7 +93,7 @@ mefa <- function(
   accum_path,
   dir_opts = NULL,
   encoding = NULL,
-  use_lessmem = FALSE,
+  use_lessmem = TRUE,
   compress_output = FALSE,
   num_threads = 0
 ) {
@@ -150,7 +150,7 @@ meshed <- function(
   outlets_layer = NULL,
   outlets_opts = NULL,
   hier_path = NULL,
-  use_lessmem = FALSE,
+  use_lessmem = TRUE,
   compress_output = FALSE,
   save_outlets = FALSE,
   num_threads = 0,
@@ -203,7 +203,7 @@ meshed <- function(
 #' @param heads_name Character, optional. Layer name for output longest flow path heads.
 #' @param coors_path Character, optional. Output longest flow path head coordinates CSV.
 #' @param find_full Logical, optional. Find full longest flow paths.
-#' @param use_lessmem Integer, optional. Use less memory.
+#' @param use_lessmem Integer, optional. 2 for least memory, 1 for less memory, and 0 for more memory.
 #' @param save_outlets Logical, optional. Write outlet rows and columns, and exit.
 #' @param num_threads Integer, optional. Number of threads (default OMP_NUM_THREADS).
 #' @param tracing_stack_size Integer, optional. Tracing stack size (default 3072, 0 for guessing).
@@ -247,5 +247,52 @@ melfp <- function(
     as.integer(save_outlets),
     as.integer(num_threads),
     as.integer(tracing_stack_size)
+  )
+}
+
+#' Run the Memory-Efficient Upstream Flow Length (MEUFL) algorithm
+#'
+#' @references
+#' Cho, H. (2026). *Flow in Float: Memory-Efficient Upstream Flow Length Parallel Computation Using an IEEE-754-Based Union Encoding*. Environmental Modelling & Software 204, 107045. <https://doi.org/10.1016/j.envsoft.2026.107045>.
+#'
+#' @param dir_path Character. Input flow direction raster (e.g., gpkg:file.gpkg:layer).
+#' @param flen_path Character. Output upstream flow length GeoTiff.
+#' @param dir_opts Character, optional. Comma-separated list of GDAL options for dir_path.
+#' @param encoding Character, optional. Input flow direction encoding.
+#'
+#'	power2 (default): \eqn{2^{0,\cdots,7}} CW from E (e.g., r.terraflow, ArcGIS)
+#'
+#'	taudem: 1-8 (E-SE CCW) (e.g., d8flowdir)
+#'
+#'	45degree: 1-8 (NE-E CCW) (e.g., r.watershed)
+#'
+#'	degree: (0,360] (E-E CCW)
+#'
+#'	E,SE,S,SW,W,NW,N,NE: custom (e.g., 1,8,7,6,5,4,3,2 for taudem)
+#' @param from_one Logical, optional. Count from 1.
+#' @param use_lessmem Integer, optional. 2 for least memory, 1 for less memory, and 0 for more memory.
+#' @param compress_output Logical, optional. Compress output GeoTIFF.
+#' @param num_threads Integer, optional. Number of threads (default OMP_NUM_THREADS).
+#' @return Integer status code (0 for success).
+#' @export
+meufl <- function(
+  dir_path,
+  flen_path,
+  dir_opts = NULL,
+  encoding = NULL,
+  from_one = FALSE,
+  use_lessmem = 2,
+  compress_output = FALSE,
+  num_threads = 0
+) {
+  .Call(
+    "call_meufl",
+    dir_path,
+    dir_opts,
+    encoding,
+    flen_path,
+    as.integer(use_lessmem),
+    as.integer(compress_output),
+    as.integer(num_threads)
   )
 }

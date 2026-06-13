@@ -152,3 +152,31 @@ SEXP call_melfp(SEXP dir_path_sexp, SEXP dir_opts_sexp, SEXP encoding_sexp,
 #endif
                       ));
 }
+
+SEXP call_meufl(SEXP dir_path_sexp, SEXP dir_opts_sexp, SEXP encoding_sexp,
+                SEXP flen_path_sexp, SEXP from_one_sexp,
+                SEXP use_lessmem_sexp, SEXP compress_output_sexp,
+                SEXP num_threads_sexp)
+{
+    const char *dir_path =
+        dir_path_sexp ==
+        R_NilValue ? NULL : CHAR(STRING_ELT(dir_path_sexp, 0));
+    const char *dir_opts =
+        dir_opts_sexp ==
+        R_NilValue ? NULL : CHAR(STRING_ELT(dir_opts_sexp, 0));
+    const char *encoding =
+        encoding_sexp ==
+        R_NilValue ? NULL : CHAR(STRING_ELT(encoding_sexp, 0));
+    const char *flen_path =
+        flen_path_sexp ==
+        R_NilValue ? NULL : CHAR(STRING_ELT(flen_path_sexp, 0));
+    int from_one = INTEGER(from_one_sexp)[0];
+    int use_lessmem = INTEGER(use_lessmem_sexp)[0];
+    int compress_output = INTEGER(compress_output_sexp)[0];
+    int num_threads = INTEGER(num_threads_sexp)[0];
+
+    return
+        ScalarInteger(meufl
+                      (dir_path, dir_opts, encoding, flen_path, from_one,
+                       use_lessmem, compress_output, num_threads));
+}

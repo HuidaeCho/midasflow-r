@@ -14,7 +14,7 @@ meshed(
   outlets_layer = NULL,
   outlets_opts = NULL,
   hier_path = NULL,
-  use_lessmem = FALSE,
+  use_lessmem = TRUE,
   compress_output = FALSE,
   save_outlets = FALSE,
   num_threads = 0,

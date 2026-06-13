@@ -61,7 +61,7 @@ E,SE,S,SW,W,NW,N,NE: custom (e.g., 1,8,7,6,5,4,3,2 for taudem)}
 
 \item{find_full}{Logical, optional. Find full longest flow paths.}
 
-\item{use_lessmem}{Integer, optional. Use less memory.}
+\item{use_lessmem}{Integer, optional. 2 for least memory, 1 for less memory, and 0 for more memory.}
 
 \item{save_outlets}{Logical, optional. Write outlet rows and columns, and exit.}
 

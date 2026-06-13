@@ -3,4 +3,5 @@
 export(mefa)
 export(melfp)
 export(meshed)
+export(meufl)
 useDynLib(midasflow, .registration=TRUE)
