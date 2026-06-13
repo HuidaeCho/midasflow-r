@@ -291,6 +291,7 @@ meufl <- function(
     dir_opts,
     encoding,
     flen_path,
+    as.integer(from_one),
     as.integer(use_lessmem),
     as.integer(compress_output),
     as.integer(num_threads)
